@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+/** Byimaan */
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-export default nextConfig;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+}

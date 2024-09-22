@@ -1,7 +1,17 @@
 // Byimaan
 
-$primary-color: #64ff00;
- 
+// Boiler plate
+
+// Variables
+$zinc-700: #1a1a1a;
+$font-stack: 'Arial', sans-serif;
+$body-bg: #f4f4f4;
+$text-color: #333;
+$max-width: 1200px;
+$primaryColor: red;
+
 :export {
-  primaryColor: $primary-color;
+   primaryColor: $primaryColor;
+   zinc700: $zinc-700;
+   textColor: $text-color
 }

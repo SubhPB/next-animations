@@ -1,0 +1,77 @@
+// Byimaan
+
+@import "../mixins.scss";
+
+.year {
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6px;
+    max-width: 1024px;
+    gap: 1rem;
+    margin-bottom: .8rem;
+    border: 2px solid rgba(237, 197, 116,1);
+    backdrop-filter: blur(100px);
+}
+
+
+.month {
+    flex-shrink: 0;
+    margin-bottom: 4px;
+    width: 100%;
+    max-width: 310px;
+    height: fit-content;
+    padding: 2px;
+    
+    details[open]{
+        border: 1px solid  rgba(237, 197, 116,1);
+        border-radius:  8px;
+    }
+    details{
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 600;
+        gap: 3px;
+        font-size: medium;    
+        padding: 3px;
+        summary {
+            @include gradient-text();
+
+        }    
+    }
+}
+
+.week {
+    // background-color: red;
+    width: 97.5%;
+    padding-left: 8px;
+    margin: 2px 0;
+    details {
+        font-size: small;
+        font-weight: 400;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 12px;
+
+        a{
+            text-decoration: none;
+        }
+        li {
+            color: black !important;
+            padding: 3px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: small;
+            font-weight: 400;
+            white-space: nowrap; 
+            // background-color: rgb(2s36, 236, 236); 
+            border-radius: 8px;
+            cursor: pointer;          
+
+            &:hover {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+    }
+}

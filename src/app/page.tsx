@@ -1,20 +1,12 @@
 /** Byimaan */
 
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import "./page.scss"
 
-import variables from "../app/variables.module.scss";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { calender, dummyData2024 } from "@/constants/calender";
+import Month from "./_components/month";
+import Week from "./_components/week";
+import Year from "./_components/year";
 
 export const metadata: Metadata = {
   title: "Next level animations",
@@ -22,9 +14,47 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
+  
   return (
-    <main style={{ fontFamily: geistSans.variable, color: variables.primaryColor, }}>
-      Byimaan
+    <main >
+      
+      <div className="wrapper">
+
+        {/* Heading */}
+        <div className="heading">
+          NEXT
+          LEVEL
+          ANIMATIONS
+        </div>
+        {/* Records */}
+        {
+          Object.entries(calender).map(
+            ([yearName, monthsObj]) => (
+              <Year key={yearName} >
+                {
+                  Object.entries(monthsObj).map(
+                    ([monthName, monthObj]) => (
+                      <Month key={monthName} summary={monthName}>
+                        {
+                          Object.entries(monthObj).map(
+                            ([weekName, animationArr]) => (
+                              <Week key={weekName} data={animationArr} summary={weekName}>
+                                {/* Week will handle all the days by itself */}
+                              </Week>
+                            )
+                          )
+                        }
+                      </Month>  
+                    )
+                  )
+                }
+              </Year>  
+            ) )
+        }
+      </div>
+
+
     </main>
   );
 }

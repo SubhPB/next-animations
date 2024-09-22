@@ -1,0 +1,50 @@
+// Breakpoints
+$xs:410px;
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
+$org-gradient: linear-gradient(113.2deg, rgba(237, 197, 116, 1), rgba(248, 97, 55, 1));
+
+@mixin gradient-text($angle: 113.92deg, $color1: rgba(237, 197, 116, 1), $color2: rgba(248, 97, 55, 1)) {
+  background: linear-gradient($angle, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For non-WebKit browsers */
+}
+
+// Mixin for responsive breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+      @media (min-width: $xs) {
+        @content;
+      }
+    }
+    @else if $breakpoint == sm {
+      @media (min-width: $sm) {
+        @content;
+      }
+    }
+    @else if $breakpoint == md {
+      @media (min-width: $md) {
+        @content;
+      }
+    }
+    @else if $breakpoint == lg {
+      @media (min-width: $lg) {
+        @content;
+      }
+    } 
+    @else if $breakpoint == xl {
+      @media (min-width: $xl) {
+        @content;
+      }
+    }
+    @else if $breakpoint == xxl {
+      @media (min-width: $xxl) {
+        @content;
+      }
+    }
+  }

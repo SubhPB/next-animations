@@ -10,4 +10,13 @@ export default {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com', // Pexels image domain
+        pathname: '**', 
+      },
+    ],
+  },
 }

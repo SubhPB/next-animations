@@ -139,8 +139,10 @@ export const dummyData2024: Calender = {
 
 export const calender: Calender = {
     '2024': {
-        'September': {
-            'Week 4': [],
-        },
+        'October': {
+            'Week 1': [
+                { timeStamp: 1728506718988, name: "Slaying the Dragon <Marquee>", href: "/slaying-the-dragon/marquee" },
+            ]
+        }
     }
 };
